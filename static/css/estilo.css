@@ -11,6 +11,54 @@
     --background: #ffffff;
 }
 
+/* Modo oscuro, alternara las variables globales cuando se haga un add class mediante el js */
+.darkmode {
+    --text-dark: #ffffff;
+    --text-light: #acacac;
+    --white: #000000;
+    --max-width: 1366px;
+    --header-font: "Chivo", sans-serif;
+    --background: #0a0a0a;
+}
+
+#theme-switch {
+    height: 32px;
+    width: 32px;
+    padding: 0;
+    border-radius: 50%;
+    border-color: transparent;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-switch svg {
+    fill: var(--text-light);
+}
+
+#theme-switch:hover {
+    cursor: pointer;
+}
+
+#theme-switch svg:hover {
+    fill: var(--text-dark);
+    transition: fill 0.3s ease;
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+.darkmode #theme-switch svg:last-child {
+    display: block;
+}
+
 * {
     padding: 0;
     margin: 0;
