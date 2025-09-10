@@ -1,0 +1,146 @@
+/* importo una fuente de googlefonts */
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* variables globales para "reutilizarlas", mantener un orden */
+:root {
+    --text-dark: #000000;
+    --text-light: #8f99a1;
+    --white: #ffffff;
+    --max-width: 1366px;
+    --header-font: "Chivo", sans-serif;
+    --background: #ffffff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+
+body {
+    background-color: var(--background);
+    font-family: "Chivo", sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+nav {
+    position: fixed;
+    isolation: isolate;
+    width: 100%;
+    z-index: 9;
+}
+
+.nav-header {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--background);
+}
+
+.nav-logo img {
+    width: 125px;
+}
+
+
+.nav-menu-btn {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    cursor: pointer;
+}
+
+.nav-item-links {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: var(--background);
+    transition: transform 0.5s;
+    z-index: -1;
+}
+
+.nav-item-links.open {
+    transform: translateY(100%);
+}
+
+.nav-item-links a {
+    font-size: 0.9rem;
+    font-weight: 370;
+    color: var(--text-light);
+    
+}
+
+.nav-item-links a:hover {
+    color: var(--text-dark);
+}
+
+
+/* para cuando pantallas sean mas alla de 768 px (escritorio) */
+@media(width > 768px) {
+    nav {
+        position: relative; /* no se desplazara con el scroll de la pantalla */
+        padding: 3.5rem 2rem 2rem 2rem; /* arriba | derecha | abajo | izquierda*/
+        max-width: var(--max-width);
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        background-color: var(--background);
+    }
+
+    .nav-header {
+        flex: 1;
+        padding: 0;
+        background-color: transparent;
+        max-height: 70px;
+        
+    }
+
+    .nav-logo img {
+        width: 280px;
+    }
+
+    .nav-menu-btn {
+        display: none;
+    }
+
+    .nav-item-links {
+        position: static;
+        padding: 0;
+        width: fit-content;
+        flex-direction: row;
+        background-color: transparent;
+        transform: none !important;
+        
+    }
+
+    .nav-item-links a:hover {
+        color: var(--text-dark);
+    }
+
+    .nav-item-links a {
+        margin: -4px;
+    }
+
+}
