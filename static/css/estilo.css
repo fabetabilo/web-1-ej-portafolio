@@ -88,6 +88,10 @@ nav {
     
 }
 
+.nav-item-links a.activa {
+        color: var(--text-dark);
+    }
+
 .nav-item-links a:hover {
     color: var(--text-dark);
 }

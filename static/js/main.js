@@ -21,3 +21,13 @@ navLinks.addEventListener("click", e => {
     }
 });
 
+// para que detecte en la pagina que este, y le asigne una clase personalizada (negrita)
+const paginaActiva = window.location.pathname.split("/").pop(); // detecta la pagina actual
+const navItemLinks = document.querySelectorAll(".nav-item"); // agarra todos los item del nav
+
+navItemLinks.forEach(link => {
+    const linkPagina = link.getAttribute("href")
+    if (linkPagina === paginaActiva) {
+        link.classList.add("activa")
+    }
+});
