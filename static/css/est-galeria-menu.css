@@ -1,0 +1,49 @@
+
+/* este es el boton galeria */
+.gallery-btn {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.3s;
+}
+
+/* overlay para texto y oscurecer */
+.gallery-btn .gallery-btn-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-btn .gallery-btn-text {
+  opacity: 0;
+  transition: opacity 0.5s;
+  color: #ffffff;
+  font-size: 2.5rem;
+  font-weight: 400;
+  text-align: center;
+  width: 80%; /* texto siempre centrado y mismo tamaño */
+  max-width: 90%;
+}
+
+/* para oscurecer */
+.gallery-btn:hover img {
+  filter: brightness(0.5) blur(1px);
+}
+/* muestra el texto */
+.gallery-btn:hover .gallery-btn-text {
+  opacity: 1;
+  
+}
+

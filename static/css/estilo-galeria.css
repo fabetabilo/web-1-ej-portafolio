@@ -50,7 +50,6 @@ para este ejemplo, se manejan en su mayoria fotografias de estos ratios: */
   align-items: center;
   justify-content: center;
   background: #74747400;
-  border-radius: 4px;
   overflow: hidden;
 }
 
